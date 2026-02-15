@@ -35,7 +35,7 @@
         </div>
         <div class="partner-card">
             <h4>Залина</h4>
-            <p>независимый партнёр AVON · 15 лет</p>
+            <p>Бизнес партнёр AVON · 15 лет</p>
             <p>💎 Бриллиантовый уровень</p>
             <p>🏆 Ценные призы от компании</p>
             <div class="car">🚗 Volkswagen Polo</div>
@@ -45,7 +45,7 @@
 </section>
 
 <section id="slider" class="section">
-    <h2>✨ Пример продукции</h2>
+    <h2>✨ Наборы для новичков</h2>
     <div class="slider-container">
         <div class="slider" id="sliderTrack">
             <div class="slide">
@@ -120,7 +120,7 @@
     <a href="https://www.avon-tut.ru/feb26r1.html" class="btn">Перейти к каталогу →</a>
 </section>
 <section id="register" class="section pink-bg">
-    <p class="pink-ng">Хотите зарегистрироваться в Avon и стать независимым партнёром?
+    <p class="pink-ng">Хотите зарегистрироваться в Avon и стать представителем с привилегиями?
         Начните работать в Avon из дома, получите доступ к текущему каталогу и возможностям продаж.
         Заказывайте косметику и духи Avon онлайн и привлекайте новых клиентов. 
     </p>
@@ -153,49 +153,7 @@
     </div>
     <p>💄 Покупай со скидкой · Получай подарки · Участвуй в розыгрышах</p>
 </footer>
-<script>
-    (function() {
-        const track = document.getElementById('sliderTrack');
-        const prev = document.getElementById('prevBtn');
-        const next = document.getElementById('nextBtn');
-        if (!track || !prev || !next) return;
-
-        const slides = Array.from(track.children);
-        let currentIndex = 0;
-        const totalSlides = slides.length;
-
-        const updateSlide = () => {
-            const width = track.parentElement.clientWidth;
-            track.style.transform = `translateX(-${currentIndex * width}px)`;
-        };
-
-        next.addEventListener('click', () => {
-            currentIndex = (currentIndex + 1) % totalSlides;
-            updateSlide();
-        });
-
-        prev.addEventListener('click', () => {
-            currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-            updateSlide();
-        });
-
-        window.addEventListener('resize', updateSlide);
-        updateSlide();
-    })();
-</script>
-<script>
-    document.querySelectorAll('.nav-links a').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            const href = this.getAttribute('href');
-            if (href && href.startsWith('#')) {
-                e.preventDefault();
-                const target = document.querySelector(href);
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
-                }
-            }
-        });
-    });
+<script src="script.js">
 </script>
 </body>
 </html>
